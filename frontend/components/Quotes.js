@@ -1,15 +1,16 @@
-// ❗ No need to change this component!
-import React from 'react'
+import React, { useContext } from 'react'
+import { QuotesContext } from '../context/quotes'
+export default function Quotes() {
 
-export default function Quotes({
-  quotes,
-  deleteQuote,
-  highlightedQuote,
-  setHighlightedQuote,
-  displayAllQuotes,
-  editQuoteAuthenticity,
-  toggleVisibility,
-}) {
+  const {
+    quotes,
+    displayAllQuotes,
+    toggleVisibility,
+    highlightedQuote,
+    setHighlightedQuote,
+    editQuoteAuthenticity,
+    deleteQuote
+  } = useContext(QuotesContext)
 
   return (
     <div id="quotes">

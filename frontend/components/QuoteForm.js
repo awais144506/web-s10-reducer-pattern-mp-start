@@ -1,4 +1,6 @@
-import React, { useReducer } from 'react'
+import React, { useContext, useReducer } from 'react'
+import { QuotesContext } from '../context/quotes'
+
 
 const CHANGE_INPUT = 'CHANGE_INPUT'
 const RESET_FORM = 'RESET_FORM'
@@ -24,8 +26,9 @@ const reducer = (state, action) => {
   }
 }
 
-export default function TodoForm({ createQuote }) {
+export default function TodoForm() {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const { createQuote } = useContext(QuotesContext)
 
   const onChange = e => {
     const { name, value } = e.target
